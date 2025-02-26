@@ -44,7 +44,7 @@ body, html {
 }
 
 /* Image Button */
-.image-button {
+.menu-toggle {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -52,10 +52,34 @@ body, html {
   z-index: 999;
 }
 
-.image-button img {
-  height: 60px;
+/* Image Button */
+.menu-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
   z-index: 999;
 }
+
+.menu-toggle img {
+  height: 60px;
+  z-index: 999;
+  transition: transform 0.4s ease; /* Smooth transition for rotation */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg); /* 3 full spins */
+  }
+}
+
+.spin-reset {
+  animation: spin 1s ease-in-out; /* Apply the spin animation */
+}
+
 
 /* Title */
 .title {
@@ -74,8 +98,8 @@ body, html {
 }
 
 /* Navbar */
-.navbar {
-  position: fixed;
+.sidebar {
+  position: absolute;
   top: 0;
   right: -50%; /* Hide navbar off-screen */
   width: 50%;
@@ -85,23 +109,30 @@ body, html {
   z-index: 3;
 }
 
-.navbar ul {
+.sidebar ul {
   list-style: none;
   padding: 0;
   margin: 80px 20px 0 20px;
 }
 
-.navbar ul li {
+.sidebar ul li {
   margin-bottom: 20px;
 }
 
-.navbar ul li a {
+.sidebar ul li a {
   color: white;
   text-decoration: none;
   font-size: 1.2rem;
 }
 
 /* Navbar Active State */
-.navbar.active {
-  right: 50%; /* Slide navbar in */
+.sidebar.active {
+  right: 0px; /* Slide navbar in */
+  position: absolute;
+}
+
+.button {
+	background-color: transparent;
+	color: transparent;
+	height: 60px
 }

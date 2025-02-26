@@ -20,30 +20,37 @@
     <!-- Background Image -->
     <div class="background-image"></div>
 
+	 <div>
     <!-- Logo -->
-    <div class="logo">
-      <img src="images/Bee_logo.webp" alt="Logo">
-    </div>
+    	<div class="logo">
+			<a href="index.html">
+				<img src="images/Bee_logo.webp" alt="Logo">
+			</a>
+    	</div>
 
-    <!-- Image Button -->
-    <div class="image-button" id="menu-button">
-      <img src="images/Plus-icon.webp" alt="Menu">
-    </div>
-
+  <!-- Image Button -->
+	<div class="menu-toggle" onclick="toggleSidebar()">
+    	<img id="sidebarButton" src="images/Plus-icon.webp" alt="sidebar button">
+	</div>
+	  </div>
+		 
     <!-- Title -->
     <div class="title">
       <h1>The World of Honey</h1>
     </div>
 
     <!-- Navbar -->
-    <nav class="navbar" id="navbar">
-      <ul>
-		<li><a href="#">Home</a></li>
-        <li><a href="#">Bees and Relatives</a></li>
-        <li><a href="#">History</a></li>
-        <li><a href="#">Where to start beekeeping</a></li>
-      </ul>
-    </nav>
+    <div class="containter">
+        <div class="sidebar" id="sidebar"> <!--this is the sidebar and it allows you to quickly move about the website when you are at the top of the website-->
+      	<ul>
+			<li><a href="#">Home</a></li>
+        	<li><a href="#">Bees and Relatives</a></li>
+        	<li><a href="#">History</a></li>
+        	<li><a href="#">Where to start beekeeping</a></li>
+      	</ul>
+    </div>
   </div>
+</div>
+	  
 	</body>
 </html>
