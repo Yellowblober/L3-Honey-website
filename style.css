@@ -92,9 +92,8 @@ body, html {
 }
 
 .title h1 {
-  font-size: 3rem;
+  font-size: 70px;
   color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Navbar */
@@ -104,7 +103,7 @@ body, html {
   right: -50%; /* Hide navbar off-screen */
   width: 50%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(236,164,0, 0.95);
   transition: right 0.5s ease-in-out;
   z-index: 3;
 }
@@ -123,6 +122,15 @@ body, html {
   color: white;
   text-decoration: none;
   font-size: 1.2rem;
+}
+
+.sidebar h1 {
+	font-size: 3rem;
+	color: white;
+	text-decoration: none;
+	padding: 30px;
+	margin-top: -10px;
+	margin-bottom: 50px;
 }
 
 /* Navbar Active State */
