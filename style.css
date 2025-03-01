@@ -8,6 +8,7 @@ body, html {
   height: 100%;
   font-family: 'Lato', sans-serif;
   overflow: hidden;
+  font-size: 16px; /* I have here the base font size which will be 1 rem, so titles will be around 5rem etc. */
 }
 
 /* Landing Page Container */
@@ -93,7 +94,7 @@ body, html {
 }
 
 .title h1 {
-  font-size: 70px;
+  font-size: 6rem;
   color: white;
 }
 
@@ -111,7 +112,7 @@ body, html {
 
 .sidebar ul {
   list-style: none;
-  padding: 0;
+  padding: 0px, 20px, 20px, 20px;
   margin: 80px 20px 0 20px;
 }
 
@@ -122,14 +123,13 @@ body, html {
 .sidebar ul li a {
   color: white;
   text-decoration: none;
-  font-size: 1.2rem;
 }
 
 .sidebar h1 {
-	font-size: 3rem;
+	font-size: 5rem;
 	color: white;
 	text-decoration: none;
-	padding: 30px;
+	padding: 60px;
 	margin-top: -10px;
 	margin-bottom: 50px;
 }
@@ -140,8 +140,49 @@ body, html {
   position: absolute;
 }
 
+/* Sidebar text */
+.sidebar-text {
+  font-size: clamp(1rem, 2.5vw, 1.5rem); /* Scales between 1rem and 1.5rem based on viewport width */
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.sidebar.active .sidebar-text.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 .button {
 	background-color: transparent;
 	color: transparent;
 	height: 60px
 }
+
+
+/* MEDIA QUERIES */
+
+/* Small screens (mobile) */
+@media (max-width: 768px) {
+  .sidebar-text {
+    font-size: 1rem; /* Smaller font size for mobile */
+  }
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sidebar-text {
+    font-size: 1.2rem; /* Slightly larger font size for tablets */
+  }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 1025px) {
+  .sidebar-text {
+    font-size: 2rem; /* Larger font size for desktops */
+  }
+}
+
+
+
+
