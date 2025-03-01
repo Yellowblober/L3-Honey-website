@@ -1,6 +1,17 @@
 @charset "utf-8";
 /* CSS Document */
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+.example::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.example {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 /* General Styles */
 body, html {
   margin: 0;
@@ -17,6 +28,18 @@ body, html {
   width: 100%;
   height: 100vh;
   overflow: auto;
+}
+
+.Fade.Seg{
+    animation: fade 1s ease-in .5s 1 normal both; /*this is the baseline speed*/
+    pointer-events: none;
+    opacity:0;
+}
+
+.Fade.Seg.Slow{ /*fading in is a bit slower than others*/
+    animation: fade 1s ease-in 1.7s 1 normal both;
+    pointer-events: none;
+    opacity:0;
 }
 
 /* Background Image */
@@ -60,15 +83,6 @@ body, html {
   transition: transform 0.4s ease; /* Smooth transition for rotation */
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg); /* 3 full spins */
-  }
-}
-
 .spin-reset {
   animation: spin 1s ease-in-out; /* Apply the spin animation */
 }
@@ -82,6 +96,8 @@ body, html {
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 1;
+  animation: fade 1s ease-in 1.3s 1 normal both; /*this adds in a fade affect when the page is loaded*/
+  pointer-events: none;
 }
 
 .title h1 {
@@ -194,6 +210,28 @@ body, html {
   max-width: 100%; /* Image will never exceed the width of its container */
   height: auto; /* Maintain aspect ratio */
   display: block; /* Remove extra space below the image */
+}
+
+/* ANIMATIONS */
+
+@keyframes fade { /*this is the fading animation changes the item from 0 opactiy (transparent) to 1 opacity which is solid*/
+	0%{ /*This is the "From" part of the animation*/
+    	opacity: 0;
+        }
+
+    100%{ /*this is the "to" part of the animation*/
+    	opacity: 1;
+    	pointer-events: all;
+        }
+    }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg); /* 3 full spins */
+  }
 }
 
 /* MEDIA QUERIES */
