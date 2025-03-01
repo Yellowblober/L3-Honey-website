@@ -7,7 +7,7 @@ body, html {
   padding: 0;
   height: 100%;
   font-family: 'Lato', sans-serif;
-  overflow: hidden;
+  overflow: auto;
   font-size: 16px; /* I have here the base font size which will be 1 rem, so titles will be around 5rem etc. */
 }
 
@@ -16,7 +16,7 @@ body, html {
   position: relative;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
+  overflow: auto;
 }
 
 /* Background Image */
@@ -35,7 +35,7 @@ body, html {
 
 /* Logo */
 .logo {
-  position: absolute;
+  position: fixed;
   top: 20px;
   left: 20px;
   z-index: 2;
@@ -47,16 +47,7 @@ body, html {
 
 /* Image Button */
 .menu-toggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
-  z-index: 999;
-}
-
-/* Image Button */
-.menu-toggle {
-  position: absolute;
+  position: fixed;
   top: 20px;
   right: 20px;
   cursor: pointer;
@@ -100,7 +91,7 @@ body, html {
 
 /* Navbar */
 .sidebar {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: -50%; /* Hide navbar off-screen */
   width: 50%;
@@ -137,7 +128,7 @@ body, html {
 /* Navbar Active State */
 .sidebar.active {
   right: 0px; /* Slide navbar in */
-  position: absolute;
+  position: fixed;
 }
 
 /* Sidebar text */
@@ -159,6 +150,51 @@ body, html {
 	height: 60px
 }
 
+/* Grid Container */
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between rows */
+  padding: 20px;
+}
+
+/* Row */
+.row {
+  display: flex;
+  gap: 20px; /* Space between columns */
+  height: 50vh;
+}
+
+/* Column */
+.column {
+  flex: 1; /* Each column takes equal space */
+  padding: 20px;
+  text-align: center;
+}
+	
+/* Column Sizes */
+.column-33 {
+  flex: 1 1 33%;
+}
+
+.column-40 {
+  flex: 1 1 40%;
+}
+
+.column-50 {
+  flex: 1 1 50%;
+}
+
+.column-60 {
+  flex: 1 1 60%;
+}
+
+/* Ensure images resize properly */
+.column img {
+  max-width: 100%; /* Image will never exceed the width of its container */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove extra space below the image */
+}
 
 /* MEDIA QUERIES */
 
@@ -166,6 +202,10 @@ body, html {
 @media (max-width: 768px) {
   .sidebar-text {
     font-size: 1rem; /* Smaller font size for mobile */
+  }
+  
+  .row {
+    flex-direction: column; /* Stack columns vertically on mobile */
   }
 }
 
@@ -182,7 +222,3 @@ body, html {
     font-size: 2rem; /* Larger font size for desktops */
   }
 }
-
-
-
-
