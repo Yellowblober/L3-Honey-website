@@ -127,7 +127,7 @@ body, html {
   margin-bottom: 20px;
 }
 
-.sidebar ul li a {
+.sidebar ul li a, ul li i {
   color: white;
   text-decoration: none;
 }
