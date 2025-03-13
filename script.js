@@ -2,8 +2,23 @@ let rotation = 0; // Initialize rotation angle
 
 function toggleSidebar() {
   const sidebar = document.querySelector('.sidebar');
+  const button = document.querySelector('.menu-toggle');
+		
   sidebar.classList.toggle('active'); // Toggle sidebar
 
+  if (sidebar.classList.contains("active")) {
+    button.style.position = "fixed";
+    button.style.top = "20px";
+    button.style.right = "35px";
+  } else {
+    // If sidebar is inactive, delay the position change to the top
+    setTimeout(() => {
+      button.style.position = "absolute";
+      button.style.top = "20px";
+      button.style.right = "20px";
+    }, 450); // this is in ms
+  }
+	
   // Rotate the image
   rotateImage();
 
