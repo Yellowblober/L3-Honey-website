@@ -31,14 +31,3 @@ function rotateImage() {
 
   img.style.transform = `rotate(${rotation}deg)`; // Apply rotation
 }
-
-// Smooth scrolling
-document.addEventListener('DOMContentLoaded', function () {
-  const scrollToFooterLink = document.getElementById('scrollToFooter'); // Smooth scrolling to footer
-
-  scrollToFooterLink.addEventListener('click', function (event) {
-    event.preventDefault(); // Prevent default behavior of link
-    const footer = document.getElementById('footer');
-    footer.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the footer
-  });
-});
