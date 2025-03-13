@@ -27,7 +27,6 @@ body, html {
   position: relative;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
 }
 
 .Fade.Seg{
@@ -53,13 +52,15 @@ body, html {
   object-position: center;
   z-index: 0;
   filter:saturate(1.1);
+  animation: bgFade linear;
+  animation-timeline: scroll();
 }
 
 .hero-section {
     position: relative;
     width: 100%;
     height: 100vh; /* Full viewport height */
-	animation: bgFade;
+	background-color: white;
 }
 
 /* Hero overlay styling */
@@ -71,6 +72,8 @@ body, html {
     height: 100%;
     background: rgba(0, 0, 0, 0.12); /* Semi-transparent black overlay */
     z-index: 2; /* Place the overlay above the image */
+	animation: bgFade linear;
+  	animation-timeline: scroll();
 }
 
 /* Logo */
