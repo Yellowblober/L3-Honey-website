@@ -194,6 +194,17 @@ body, html {
   padding: 20px;
 }
 
+/* Footer */
+.footer {
+    position: relative;
+    z-index: 3;
+    background-color: #282828;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+
 /* Row */
 .row {
   display: flex;
@@ -301,48 +312,19 @@ body, html {
   }
 }
 
-/*new stuff*/
-/* Section Wrapper */
-.section-wrapper {
-    position: relative;
+/*new*/
+
+/* Hover effects for links */
+a:hover {
+  color: #A67C00;
+  transition: color 0.3s ease;
 }
 
-/* Sections */
-.section {
-    position: sticky; /* Use sticky positioning */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 1s ease-in-out; /* Smooth transition for sliding effect */
+.column img:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease-in-out;
 }
 
-.light-section {
-    background-color: #F4EDED; /* Light background */
-    color: black;
-}
-
-.dark-section {
-    background-color: #282828; /* Dark background */
-    color: white;
-}
-
-/* Grid Container */
-.grid-container {
-    position: relative;
-    z-index: 2; /* Ensure content is above the overlay */
-    padding: 20px; /* Add padding for better spacing */
-}
-
-/* Footer */
-.footer {
-    position: relative;
-    z-index: 3;
-    background-color: #282828;
-    color: white;
-    text-align: center;
-    padding: 20px;
+.column img {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
