@@ -312,14 +312,6 @@ body, html {
   }
 }
 
-/*new*/
-
-/* Hover effects for links */
-a:hover {
-  color: #A67C00;
-  transition: color 0.3s ease;
-}
-
 .column img:hover {
   transform: scale(1.02);
   transition: transform 0.3s ease-in-out;
