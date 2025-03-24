@@ -63,6 +63,7 @@ body, html {
     position: relative;
     width: 100%;
     height: 100vh; /* Full viewport height */
+	background-color: #F4EDED;
 }
 
 /* Hero overlay styling */
@@ -136,7 +137,7 @@ body, html {
   height: 100%;
   background-color: rgba(236,164,0, 0.95);
   transition: right 0.5s ease-in-out;
-  z-index: 3;
+  z-index: 4;
 }
 
 .sidebar ul {
@@ -242,7 +243,7 @@ body, html {
 /* Ensure images resize properly */
 .column img {
   max-width: 100%; /* Image will never exceed the width of its container */
-  height: auto; /* Maintain aspect ratio */
+  height: 100%; /* Maintain aspect ratio */
   display: block; /* Remove extra space below the image */
 }
 
@@ -323,8 +324,6 @@ body, html {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* new */
-
 /* Checklist Styling */
 .checklist {
     display: flex;
@@ -363,17 +362,15 @@ body, html {
     text-decoration: underline;
 }
 
-/*new timeline*/
-
     /* Timeline Section */
-    #timeline-section {
-      position: relative;
-      padding: 20px 0;
-    }
+#timeline-section {
+    position: relative;
+    padding: 20px 0;
+}
     
     /* Timeline container: full viewport width with horizontal scrolling */
  .timeline-container {
- 	 width: 100%;
+ 	width: 100%;
   	max-width: 100%;
   	margin: 0 auto;
   	overflow-x: auto;
@@ -461,4 +458,75 @@ body, html {
     background-color: #ECA400;
     border-radius: 50%;
     z-index: 1;
+}
+
+/* new */
+
+/* Background Image Container */
+.explore-section {
+    position: relative;
+    height: 50vh; /* Adjust height as needed (not full screen) */
+    width: 100%; /* Fits within its container */
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    color: white; /* White text */
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Background Image */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/bee-on-flower.jpg'); /* Initial background image */
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    animation: changeBackground 15s infinite; /* Change background every 15 seconds */
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* 98% transparent black overlay */
+    z-index: 2;
+}
+
+/* Keyframes for Background Change */
+@keyframes changeBackground {
+    0%, 20% {
+        background-image: url('images/bee-on-flower.jpg'); /* First image */
+        opacity: 1;
+    }
+    25%, 45% {
+        background-image: url('images/bee-on-purple-flower.jpg'); /* Second image */
+        opacity: 1;
+    }
+    50%, 70% {
+        background-image: url('images/bee-on-pink-flower.jpg'); /* Third image */
+        opacity: 1;
+    }
+    75%, 100% {
+        background-image: url('images/bee-on-magenta-flower.jpg'); /* Loop back to first image */
+        opacity: 1;
+	}
+}
+
+/* Add a smooth fade transition */
+.background-image {
+    transition: background-image 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+/* Text Styling */
+.explore-section h1 {
+    font-size: 4rem; /* Adjust size as needed */
+    z-index: 3; /* Ensure text is above overlay */
 }
