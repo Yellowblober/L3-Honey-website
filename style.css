@@ -2,7 +2,7 @@
 /* CSS Document */
 
 /* Hide scrollbar for Chrome, Safari and Opera */
-.example::-webkit-scrollbar {
+body::-webkit-scrollbar {
   display: none;
 }
 
@@ -21,6 +21,8 @@ body, html {
   overflow: auto;
   font-size: 16px; /* I have here the base font size which will be 1 rem, so titles will be around 5rem etc. */
   background-color: #F4EDED;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 /* Landing Page Container */
@@ -331,11 +333,11 @@ body, html {
 }
 
 .checklist label {
-    display: flex;
-    align-items: center;
+    display: center;
+    align-items: flex-start;
     gap: 8px;
     font-size: 16px;
-	accent-color: rgba(236,164,0, 1);
+	accent-color: #ECA400;
 }
 
 .checklist input[type="checkbox"] {
@@ -363,86 +365,100 @@ body, html {
 
 /*new timeline*/
 
-.timeline { 
- 
-    /* set a variable for the color */
-    -timeline-color: #9bc;
-  
+    /* Timeline Section */
+    #timeline-section {
+      position: relative;
+      padding: 20px 0;
+    }
+    
+    /* Timeline container: full viewport width with horizontal scrolling */
+ .timeline-container {
+ 	 width: 100%;
+  	max-width: 100%;
+  	margin: 0 auto;
+  	overflow-x: auto;
+  	overflow-y: hidden;
+  	white-space: nowrap;
+  	position: relative;
+}
+    /* Hide scrollbar */
+.timeline-container::-webkit-scrollbar {
+    display: none;
+}
+
+.timeline-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+    
+    /* Timeline list styling */
+.timeline {
     position: relative;
-    list-style: none;
     display: inline-flex;
-    flex-wrap: nowrap;
+    justify-content: center; /* Center timeline events horizontally */
+    align-items: center;
+    padding: 50px 0;
     margin: 0;
-    padding: 0;
-    height: 240px; 
-}  /* set here the height of the timeline */
-
-
-/* middle line */
-.timeline:before {
-    content: "";
-    position: absolute;
-    top: calc(50% - 1px);
-    width: 100%;
-    height: 2px;
-    background: var(--timeline-color); }
-
-
-.timeline li { 
-    margin: 0 20px;
-    min-width: 200px;
-    align-self: flex-start; }
-
-
-/*  event in even position are bottom-aligned */
-.timeline li:nth-child(2n) { align-self: flex-end;  }
-
-
-.timeline div {
-    position: relative;
-    padding: 10px;
-    border: 1px var(--timeline-color) solid; }
-
-
-/* style for the dot over the timeline */
-.timeline li:before {
+    list-style: none;
+}
+    
+    /* Yellow line running through the dots */
+.timeline::before {
     content: "";
     position: absolute;
     top: 50%;
-    margin-left: 100px;
-    transform: translate(-50%, -50%);
-    border: 1px #9bc solid;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background:  var(--timeline-color);      
+    left: 0;
+    width: 100%;
+    height: 4px;
+    transform: translateY(-50%);
+    z-index: 0;
+	background-color: #ECA400;
 }
-
-
-/* style for the event arrow */
-.timeline div:before {
+    
+    /* Timeline items */
+.timeline li {
+    position: relative;
+    display: inline-block;
+    margin: 0 50px;
+    z-index: 1;
+    padding: 20px 0;  /* vertical padding for spacing */
+}
+    
+    /* Top part: Date above the line */
+.timeline-top {
+    margin-top: 10%;
+    color: black;
+    font-size: 19px;
+    font-weight: bold;
+}
+    
+    /* Bottom part: Details below the line, moved further down */
+.timeline-bottom {
+    margin-top: 25%;  /* increased from 20px to 40px */
+    color: #ECA400;
+    font-size: 14px;
+}
+    
+.timeline-bottom h3 {
+    font-size: 19px;
+	color: black;
+}
+    
+.timeline-bottom p {
+    margin: 0;
+	color: black;
+}
+    
+    /* Dot styling: using a pseudo-element on each li */
+.timeline li::after {
     content: "";
     position: absolute;
+    top: 50%;  /* Centered on the line */
     left: 50%;
-    top: 100%;
-    width: 20px;
-    height: 20px;
-    transform: translate(-50%, -1px) rotateZ(45deg);
-    background: #fff;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background-color: #ECA400;
+    border-radius: 50%;
+    z-index: 1;
 }
-
-
-/* position of the event arrow in odd position */
-.timeline li:nth-child(2n - 1) div:before {
-    top: 100%;
-    margin-top: -8px;
-    border-right: 1px var(--timeline-color) solid;
-    border-bottom: 1px var(--timeline-color) solid; }
-
-
-/* position of the event arrow in even position */
-.timeline li:nth-child(2n) div:before {
-    top: 0;
-    margin-top: -10px;
-    border-left: 1px var(--timeline-color) solid;
-    border-top: 1px var(--timeline-color) solid; }

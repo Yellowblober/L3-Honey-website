@@ -8,14 +8,10 @@ function toggleSidebar() {
 
   if (sidebar.classList.contains("active")) {
     button.style.position = "fixed";
-    button.style.top = "20px";
-    button.style.right = "35px";
   } else {
     // If sidebar is inactive, delay the position change to the top
     setTimeout(() => {
       button.style.position = "absolute";
-      button.style.top = "20px";
-      button.style.right = "20px";
     }, 450); // this is in ms
   }
 	
@@ -65,31 +61,31 @@ function rotateImage() {
         });
     });
 
-    document.addEventListener('DOMContentLoaded', function () {
-        const timelineSection = document.querySelector('.timeline-section');
-        const timeline = document.querySelector('.timeline');
-        const timelineWidth = timeline.scrollWidth; // Total width of the timeline
-        const containerWidth = timelineSection.clientWidth; // Visible width of the container
-
-        let isScrollingTimeline = false;
-
-        window.addEventListener('scroll', function () {
-            const scrollY = window.scrollY; // Vertical scroll position
-            const sectionTop = timelineSection.offsetTop; // Top position of the timeline section
-            const sectionHeight = timelineSection.clientHeight; // Height of the timeline section
-
-            // Check if the user has scrolled into the timeline section
-            if (scrollY >= sectionTop && scrollY <= sectionTop + sectionHeight) {
-                isScrollingTimeline = true;
-                document.body.style.overflowY = 'hidden'; // Disable vertical scrolling
-                timeline.style.overflowX = 'scroll'; // Enable horizontal scrolling
-            } else {
-                if (isScrollingTimeline) {
-                    isScrollingTimeline = false;
-                    document.body.style.overflowY = 'auto'; // Re-enable vertical scrolling
-                    timeline.style.overflowX = 'hidden'; // Disable horizontal scrolling
-                }
-            }
-        });
+    document.addEventListener("DOMContentLoaded", function () {
+      const timelineContainer = document.querySelector(".timeline-container");
+      let isHorizontal = false;
+      
+      function updateScrollBehavior() {
+        const rect = timelineContainer.getBoundingClientRect();
+        // When the timeline container is centered in the viewport, disable vertical scrolling
+        if (rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2) {
+          document.body.style.overflowY = "hidden";
+          isHorizontal = true;
+        } else {
+          document.body.style.overflowY = "auto";
+          isHorizontal = false;
+        }
+      }
+      
+      window.addEventListener("scroll", updateScrollBehavior);
+      updateScrollBehavior();
+      
+      // Convert vertical wheel events into horizontal scrolling
+      timelineContainer.addEventListener("wheel", function (event) {
+        if (isHorizontal) {
+          event.preventDefault();
+          timelineContainer.scrollLeft += event.deltaY;
+        }
+      });
     });
 
