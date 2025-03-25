@@ -1,4 +1,4 @@
-let rotation = 0; // Initialize rotation angle
+	let rotation = 0; // Initialize rotation angle
 
 function toggleSidebar() {
   const sidebar = document.querySelector('.sidebar');
@@ -88,4 +88,26 @@ function rotateImage() {
         }
       });
     });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const slides = document.querySelector('.slides');
+    const prevButton = document.querySelector('.arrow.left');
+    const nextButton = document.querySelector('.arrow.right');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        const slideWidth = slides.children[0].clientWidth;
+        slides.style.transform = `translateX(-${slideWidth * index}px)`;
+    }
+
+    prevButton.addEventListener('click', function () {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.children.length - 1;
+        showSlide(currentIndex);
+    });
+
+    nextButton.addEventListener('click', function () {
+        currentIndex = (currentIndex < slides.children.length - 1) ? currentIndex + 1 : 0;
+        showSlide(currentIndex);
+    });
+});
 

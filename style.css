@@ -211,8 +211,8 @@ body, html {
 /* Row */
 .row {
   display: flex;
-  gap: 150px; /* Space between columns */
-  height: 50vh;
+  gap: auto; /* Space between columns */
+  height: auto;
   margin-top: 40px;
 }
 
@@ -238,6 +238,10 @@ body, html {
 
 .column-60 {
   flex: 1 1 60%;
+}
+
+.column-100 {
+	flex: 1 1 100%;
 }
 
 /* Ensure images resize properly */
@@ -299,6 +303,15 @@ body, html {
   .row {
     flex-direction: column; /* Stack columns vertically on mobile */
   }
+
+  .timeline li {
+	  width: 200px;
+	  margin: 0 30px;
+  }
+	.timeline {
+		width: calc(200px * 5 + 30px * 4);
+		margin: 0 auto;
+	}
 }
 
 /* Medium screens (tablets) */
@@ -306,6 +319,15 @@ body, html {
   .sidebar-text {
     font-size: 1.2rem; /* Slightly larger font size for tablets */
   }
+	
+	.timeline li{
+		width: 250px;
+		margin: 0 40px;
+	}
+	.timeline {
+		width: calc(250px * 5 + 40px * 4);
+		margin: 0 auto;
+	}
 }
 
 /* Large screens (desktops) */
@@ -313,6 +335,14 @@ body, html {
   .sidebar-text {
     font-size: 2rem; /* Larger font size for desktops */
   }
+ 	.timeline li{
+		width: 300px;
+		margin: 0 50px;
+	}
+	.timeline {
+		width: 1200px;
+		margin: 0 auto;
+	}
 }
 
 .column img:hover {
@@ -371,12 +401,14 @@ body, html {
     /* Timeline container: full viewport width with horizontal scrolling */
  .timeline-container {
  	width: 100%;
-  	max-width: 100%;
+    height: 35vh;
   	margin: 0 auto;
-  	overflow-x: auto;
-  	overflow-y: hidden;
+  	overflow-x:scroll;
   	white-space: nowrap;
   	position: relative;
+	padding: 0 0 50px 0;
+	vertical-align: middle;
+	text-align: center;
 }
     /* Hide scrollbar */
 .timeline-container::-webkit-scrollbar {
@@ -390,13 +422,14 @@ body, html {
     
     /* Timeline list styling */
 .timeline {
-    position: relative;
-    display: inline-flex;
+    position: absolute;
+    display: inline-block;
     justify-content: center; /* Center timeline events horizontally */
     align-items: center;
     padding: 50px 0;
-    margin: 0;
+    margin: -60px 0 -60px 0;
     list-style: none;
+	width: 1800px;
 }
     
     /* Yellow line running through the dots */
@@ -405,7 +438,7 @@ body, html {
     position: absolute;
     top: 50%;
     left: 0;
-    width: 100%;
+    width: 2050px;
     height: 4px;
     transform: translateY(-50%);
     z-index: 0;
@@ -419,6 +452,8 @@ body, html {
     margin: 0 50px;
     z-index: 1;
     padding: 20px 0;  /* vertical padding for spacing */
+	width: 300px;
+	vertical-align: top;
 }
     
     /* Top part: Date above the line */
@@ -427,6 +462,8 @@ body, html {
     color: black;
     font-size: 19px;
     font-weight: bold;
+	height: 30px;
+	line-height: 30px;
 }
     
     /* Bottom part: Details below the line, moved further down */
@@ -444,6 +481,7 @@ body, html {
 .timeline-bottom p {
     margin: 0;
 	color: black;
+	align-items: center;
 }
     
     /* Dot styling: using a pseudo-element on each li */
@@ -529,4 +567,58 @@ body, html {
 .explore-section h1 {
     font-size: 4rem; /* Adjust size as needed */
     z-index: 3; /* Ensure text is above overlay */
+}
+
+/* Carousel Container */
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Slides */
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+	box-shadow: none;
+	align-content: center;
+	justify-content: center;
+}
+
+/* Arrow Controls */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 3rem;
+    color: white;
+    padding: 10px;
+    border-radius: none;
+    border: none;
+    user-select: none;
+	background-color:transparent;
+}
+
+.arrow:hover {
+    color: #ECA400;
+}
+
+.left {
+    left: 10px;
+}
+
+.right {
+    right: 10px;
 }
