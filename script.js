@@ -61,35 +61,7 @@ function rotateImage() {
         });
     });
 
-    document.addEventListener("DOMContentLoaded", function () {
-      const timelineContainer = document.querySelector(".timeline-container");
-      let isHorizontal = false;
-      
-      function updateScrollBehavior() {
-        const rect = timelineContainer.getBoundingClientRect();
-        // When the timeline container is centered in the viewport, disable vertical scrolling
-        if (rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2) {
-          document.body.style.overflowY = "hidden";
-          isHorizontal = true;
-        } else {
-          document.body.style.overflowY = "auto";
-          isHorizontal = false;
-        }
-      }
-      
-      window.addEventListener("scroll", updateScrollBehavior);
-      updateScrollBehavior();
-      
-      // Convert vertical wheel events into horizontal scrolling
-      timelineContainer.addEventListener("wheel", function (event) {
-        if (isHorizontal) {
-          event.preventDefault();
-          timelineContainer.scrollLeft += event.deltaY;
-        }
-      });
-    });
-
-document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function () {
     const slides = document.querySelector('.slides');
     const prevButton = document.querySelector('.arrow.left');
     const nextButton = document.querySelector('.arrow.right');
