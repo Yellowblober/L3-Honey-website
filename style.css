@@ -207,6 +207,11 @@ body, html {
     padding: 20px;
 }
 
+.footer h1  {
+	font-size: 7rem;
+	text-alight: left;
+}
+
 
 /* Row */
 .row {
@@ -313,6 +318,10 @@ body, html {
 		width: 1800px;
 		margin: 0 auto;
 	}
+	
+	.sidebar  h1 {
+		font-size: 2rem;
+	}
 }
 
 /* Medium screens (tablets) */
@@ -329,6 +338,10 @@ body, html {
 		width: 1800px;
 		margin: 0 auto;
 	}
+	
+	.sidebar  h1 {
+		font-size: 3rem;
+	}
 }
 
 /* Large screens (desktops) */
@@ -343,6 +356,10 @@ body, html {
 	.timeline {
 		width: 1800px;
 		margin: 0 auto;
+	}
+	
+	.sidebar  h1 {
+		font-size: 4rem;
 	}
 }
 
@@ -620,4 +637,9 @@ body, html {
 
 .right {
     right: 10px;
+}
+
+.darkBg { 
+	background-color: #282828;
+	color: white;
 }
