@@ -17,6 +17,126 @@
     <!-- Google fonts-->
 	</head>
 <body>
+
+<div class="landing-bees-page">
+<!-- Logo -->
+<div class="logo">
+	<a href="index.html">
+		<img src="images/Bee_logo-black.webp" alt="Logo withe shape of a bee">
+	</a>
+</div>
+
+<!-- Image Button -->
+<div class="menu-toggle" onclick="toggleSidebar()">
+	<img id="sidebarButton" src="images/Plus-icon-black.webp" alt="sidebar button">
+</div>
 	
+<!-- Title -->
+<div class="title-bees-page">
+	<div class="Fade Seg">
+		<h1>MEET THE BEE FAMILY</h1>
+	</div>
+</div>
+
+<!-- Navbar -->
+<div class="containter">
+	<div class="sidebar" id="sidebar"> <!--this is the sidebar and it allows you to quickly move about the website when you are at the top of the website-->
+		<h1 class="sidebar-text">TWOH.</h1>
+			<ul>
+				<li><a href="index.html" class="sidebar-text"><i class="bx bx-home" ></i>&nbsp;&nbsp;Home</a></li>
+				<li><a href="Bees.html" class="sidebar-text"><i class="bx bx-images" ></i>&nbsp;&nbsp;Bees and Relatives</a></li>
+				<li><a href="#" class="sidebar-text"><i class="bx bx-box" ></i>&nbsp;&nbsp;History</a></li>
+				<li><a href="#" class="sidebar-text"><i class="bx bx-bulb" ></i>&nbsp;&nbsp;Where to start beekeeping</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- Tooltip Element -->
+<div class="tooltip" id="tooltip">Read More</div>
+
+<!-- Overlay for Inspect Click -->  <!-- This whole overlay section is all just place holder stuff as once the user clicks an image the information attached to that image gets placed into the sections below using javascript -->
+<div class="overlay" id="inspect-overlay">
+<div class="overlay-content">
+	<button class="close-btn" id="close-overlay">&times;</button>
+  <div class="overlay-image">
+	<img src="images/LandingImage.webp" alt="Inspected image" id="overlay-img">
+  </div>
+  <div class="overlay-text">
+	<h2 id="overlay-title">Title Goes Here</h2>
+	<p id="overlay-desc">Description text goes here.</p>
+  </div>
+</div>
+</div>
+
+<div class="grid-container">
+	<div class="row">
+		<div class="column column-33">
+			<img src="images/honey-bee.jpg" alt="A picture of a bee on a flower" class="inspect-img" data-title="#" data-desc="#">
+		</div>
+		<div class="column column-33">
+			<img src="images/honeycomb.jpg" alt="image of honeycomb that bees are on">
+		</div>
+		<div class="column column-33">
+			<img src="images/honeycomb.jpg" alt="image of honeycomb that bees are on">
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="column column-33">
+			<img src="images/honeycomb.jpg" alt="image of honeycomb that bees are on">
+		</div>
+		<div class="column column-33">
+			<img src="images/honeycomb.jpg" alt="image of honeycomb that bees are on">
+		</div>
+		<div class="column column-33">
+			<img src="images/honeycomb.jpg" alt="image of honeycomb that bees are on">
+		</div>
+	</div>
+</div>
+	
+	
+	
+<div class="darkBg">
+	<div class="grid-container">
+		<div class="row">
+			<div class="column column-50">
+				<h1>Want to Learn More?</h1>
+				<p>If you are looking for something more specific you might want to consider following some of the websites listed to the right. Or if you simply want to check out the other pages on this site conisder looking at the selection below.</p>
+			</div>
+			<div class="column column-50">
+				<a href="https://apinz.org.nz/new-to-beekeeping/" class="learn-more-link">| Apiculture NZ</a>
+				<a href="https://www.ecrotek.co.nz/?srsltid=AfmBOooZJjiKQmD9oFNOWHPpJjeEI8sENYSpNDaxQ_fvIiohxqYe0gVQ" class="learn-more-link">| Ecrotek NZ</a>
+				<a href="https://shop.farmlands.co.nz/collections/beekeeping?srsltid=AfmBOopTX_30uh6P2Pgj8IuQ2WJZbc4dYwl78bcve6UrCwjQDnsHZ8Ba" class="learn-more-link">| Farmlands NZ</a>
+				<a href="https://queenbeefarms.ca/pages/the-history-of-beekeeping" class="learn-more-link">| Queen Bee Farms CA</a>
+				<a href="https://bestbees.com/bee-species-types-of-bees/" class="learn-more-link">| Best Bees |</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="darkBg">
+	<div class="grid-container">
+		<div class="row">
+			<div class="column column-50">
+				<h1 style="text-align: left;">PAGES:</h1> <!-- ive added this stlye into the html just so that i dont need to make a whole class just for one style property -->
+				<div class="footer-nav">
+					<ul>
+					<li><a href="index.html" class="sidebar-text-footer"><i class="bx bx-home" ></i>&nbsp;&nbsp;Home</a></li>
+					<li><a href="Bees.html" class="sidebar-text-footer"><i class="bx bx-images" ></i>&nbsp;&nbsp;Bees and Relatives</a></li>
+					<li><a href="#" class="sidebar-text-footer"><i class="bx bx-box" ></i>&nbsp;&nbsp;History</a></li>
+					<li><a href="#" class="sidebar-text-footer"><i class="bx bx-bulb" ></i>&nbsp;&nbsp;Where to start beekeeping</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<!-- Footer -->
+<footer class="footer">
+	<h1>THE WORLD OF HONEY <p>&copy; All rights reserved 2025.</p></h1> 
+</footer>
+
 </body>
 </html>

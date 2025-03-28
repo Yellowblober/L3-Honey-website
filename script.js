@@ -83,3 +83,41 @@ function rotateImage() {
     });
 });
 
+// NEW STUFF \\
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Tooltip logic: show "Read More" near the cursor when hovering an image
+  const tooltip = document.getElementById('tooltip');
+  const images = document.querySelectorAll('.inspect-img');
+
+  images.forEach(img => {
+    img.addEventListener('mousemove', (e) => {
+      // Position the tooltip relative to the mouse
+      tooltip.style.top = (e.pageY + 15) + 'px';
+      tooltip.style.left = (e.pageX + 15) + 'px';
+      tooltip.style.opacity = 1;
+    });
+    img.addEventListener('mouseleave', () => {
+      tooltip.style.opacity = 0;
+    });
+
+    // On click, show the overlay with unique information
+    img.addEventListener('click', () => {
+      // Set the overlay image source
+      document.getElementById('overlay-img').src = img.src;
+      // Retrieve unique title and description from data attributes
+      document.getElementById('overlay-title').textContent =
+        img.getAttribute('data-title') || "Inspecting Image";
+      document.getElementById('overlay-desc').textContent =
+        img.getAttribute('data-desc') || "Detailed information about this image.";
+      
+      // Display the overlay
+      document.getElementById('inspect-overlay').style.display = "flex";
+    });
+  });
+
+  // Close overlay logic
+  document.getElementById('close-overlay').addEventListener('click', () => {
+    document.getElementById('inspect-overlay').style.display = "none";
+  });
+});
