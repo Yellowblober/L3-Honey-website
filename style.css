@@ -155,6 +155,10 @@ body, html {
   text-decoration: none;
 }
 
+.sidebar ul li a:hover {
+	text-decoration: underline; 
+}
+
 .sidebar h1 {
 	font-size: 5rem;
 	color: white;
@@ -203,13 +207,23 @@ body, html {
     z-index: 3;
     background-color: #282828;
     color: white;
-    text-align: center;
-    padding: 20px;
+    text-align: left;
 }
 
 .footer h1  {
 	font-size: 7rem;
-	text-alight: left;
+	text-align: left; 
+	display:inline-block; 
+	vertical-align:bottom;
+	padding: 20px 0 0 20px;
+	margin: 20px;
+}
+
+.footer p {
+	font-size: 24px;
+	text-align: left; 
+	display:inline-block; 
+	vertical-align:bottom;
 }
 
 
@@ -342,6 +356,10 @@ body, html {
 	.sidebar  h1 {
 		font-size: 3rem;
 	}
+	
+	.timeline-bottom p {
+		font-size: 14px;
+	}
 }
 
 /* Large screens (desktops) */
@@ -360,6 +378,80 @@ body, html {
 	
 	.sidebar  h1 {
 		font-size: 4rem;
+	}
+	
+	.column h1 {
+		font-size: 3rem;
+	}
+	
+	.column p {
+		font-size: 19px;
+	}
+	
+	.timeline-bottom p {
+		font-size: 14px;
+	}
+}
+
+/* 24' monitors*/
+@media (min-width: 1820px) {
+	.column h1 {
+		font-size: 4rem;
+	}
+	
+	.column p {
+		font-size: 24px;
+	}
+	
+	.timeline-bottom p {
+		font-size: 14px;
+	}
+	
+  .timeline-container {
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden; /* Disable scrolling */
+  }
+
+  .timeline {
+    position: relative !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto !important;
+    width: fit-content !important;
+    padding: 0 50px !important;
+  }
+
+  .timeline::before {
+    width: 100%;
+    left: 0;
+    right: 0;
+    transform: none; /* Prevents shifting */
+  }
+
+  .timeline li {
+    margin: 0 60px; /* Ensures even spacing between items */
+  }
+
+	.sidebar h1{
+		font-size:7rem; 
+	}
+	
+	.title h1 {
+		font-size: 9rem;
+	}
+	
+	.column p {
+		padding: 0 20px 20px 20px;
+	}
+}
+
+/* 27' monitors*/
+@media (min-width: 2200px) {
+	
+	.timeline-bottom p {
+		font-size: 14px;
 	}
 }
 
@@ -395,7 +487,7 @@ body, html {
     margin-top: 20px;
     font-size: 18px;
     text-decoration: none;
-    color: #007BFF;
+    color: #ECA400;
     font-weight: bold;
 }
 
@@ -482,9 +574,9 @@ body, html {
 	line-height: 30px;
 }
     
-    /* Bottom part: Details below the line, moved further down */
+    /* Bottom part: Details below the line */
 .timeline-bottom {
-    margin-top: 25%;  /* increased from 20px to 40px */
+    margin-top: 25%; 
     color: #ECA400;
     font-size: 14px;
 }
@@ -512,6 +604,7 @@ body, html {
     background-color: #ECA400;
     border-radius: 50%;
     z-index: 1;
+	align-content: center;
 }
 
 /* new */
@@ -642,4 +735,30 @@ body, html {
 .darkBg { 
 	background-color: #282828;
 	color: white;
+}
+
+.footer-nav {
+	text-align: left !important;
+	font-size: 24px;
+	color: white;
+}
+
+.footer-nav ul {
+  list-style: none;
+	color: white;
+}
+
+.footer-nav ul li {
+  margin-bottom: 20px;
+  color: white;
+}
+
+.footer-nav ul li a, ul li i {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-nav ul li a:hover {
+	color: #ECA400; 
+	text-decoration: underline; 
 }
