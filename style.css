@@ -267,7 +267,7 @@ body, html {
 /* Ensure images resize properly */
 .column img {
   max-width: 100%; /* Image will never exceed the width of its container */
-  height: 100%; /* Maintain aspect ratio */
+  height: auto; /* Maintain aspect ratio */
   display: block; /* Remove extra space below the image */
 }
 
@@ -812,71 +812,69 @@ body, html {
 /* Full-screen overlay */
 .overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 1);
   z-index: 2000;
-  display: flex;               /* Center child horizontally & vertically */
-  align-items: center;
+  display: flex;             /* Keep it flex so content is centered */
   justify-content: center;
-  display: none;
+  align-items: center;
+  opacity: 0;                /* Start transparent */
+  visibility: hidden;        /* Not visible or focusable */
+  pointer-events: none;      /* Prevent clicks while hidden */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* White content box (image on left, text on right) */
+/* The content box */
 .overlay-content {
-  position: relative;          /* so the close button is placed inside this box */
-  background: #fff;
-  width: 80%;                  /* or any width you prefer */
+  position: relative; 
+  background: transparent;
+  display: flex;
+  width: 80%;
   max-width: 1000px;
-  min-height: 300px;           /* ensure enough vertical space */
-  display: flex;               /* side-by-side layout for image & text */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   padding: 20px;
 }
 
-/* The image side */
+/* Show the overlay with a fade-in */
+.overlay.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all; /* Now clickable */
+}
+
+/* Close (X) button at top right of the content box */
+.close-btn {
+  position: absolute;
+  top: 10px; 
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Example styling for the image on the left */
 .overlay-image {
-  flex: 1;                     /* half the box (if you have 2 columns) */
-  max-width: 50%;              /* ensures it doesn't exceed half the box width */
+  flex: 1;
+  margin-right: 20px;
 }
 .overlay-image img {
   width: 100%;
   height: auto;
-  display: block;
   object-fit: cover;
 }
 
-/* The text side */
+/* Example styling for text on the right */
 .overlay-text {
-  flex: 1;                     /* other half of the box */
-  max-width: 50%;
-  margin-left: 20px;           /* gap between image & text */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex: 1;
   text-align: left;
+  color: #000;
 }
 .overlay-text h2 {
   margin-bottom: 10px;
-  font-size: 24px;
-  color: #000;
+  color: white;
 }
 .overlay-text p {
-  font-size: 16px;
-  color: #000;
-  line-height: 1.5;
-}
-
-/* The X button, placed in the top-right corner of the white box */
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: transparent;
-  border: none;
-  font-size: 24px;
-  color: #000;
-  cursor: pointer;
+  margin-top: 0;
+  color: white;
 }
