@@ -240,12 +240,12 @@ body, html {
   flex: 1; /* Each column takes equal space */
   padding: 20px;
   text-align: center;
-  align-content: center;
 }
 	
 /* Column Sizes */
 .column-33 {
   flex: 1 1 33%;
+  vertical-align: top; 
 }
 
 .column-40 {
@@ -269,6 +269,7 @@ body, html {
   max-width: 100%; /* Image will never exceed the width of its container */
   height: auto; /* Maintain aspect ratio */
   display: block; /* Remove extra space below the image */
+  vertical-align: top;
 }
 
 /* ANIMATIONS */
@@ -850,7 +851,7 @@ body, html {
   border: none;
   font-size: 40px;
   cursor: pointer;
-  color: white;
+  color: #ECA400;
 }
 
 /* Example styling for the image on the left */
@@ -877,4 +878,29 @@ body, html {
 .overlay-text p {
   margin-top: 0;
   color: white;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.image-container img {
+    width: 100%;
+    display: block;
+	vertical-align: top;
+}
+
+.image-title {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    padding: 5px 10px;
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
 }
