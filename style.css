@@ -270,6 +270,20 @@ html {
 	margin-right: -20px; 
 }
 
+.column-75 {
+	flex: 1 1 75%;
+	padding: 20px 0 !important;
+	text-align: center;
+	margin-left: 100px; 
+	margin-right: 100px; 
+}
+
+.column-75 img {
+	max-height: 1000px;
+	object-fit: cover;
+	width: 800px;
+}
+
 /* Ensure images resize properly */
 .column img {
   max-width: 100%; /* Image will never exceed the width of its container */
@@ -375,6 +389,11 @@ html {
 	.image-title {
 		font-size: 1rem !important;
 	}
+	
+	.column-75 {
+		margin-left: 100px;
+		margin-right: 100px;
+	}
 }
 
 /* Large screens (desktops) */
@@ -471,6 +490,11 @@ html {
 	.image-title {
 		font-size: 3.5rem !important;
 	}
+	
+	.column-75 {
+		margin-left: 200px;
+		margin-right: 200px;
+	}
 }
 
 /* 27' monitors*/
@@ -482,6 +506,11 @@ html {
 	
 	.image-title {
 		font-size: 4rem !important;
+	}
+	
+	.column-75 {
+		margin-left: 500px;
+		margin-right: 500px;
 	}
 }
 
@@ -733,7 +762,7 @@ html {
 }
 
 .slide img {
-    width: 100%;
+    width: 100% !important;
     height: auto;
     display: block;
 	box-shadow: none;
@@ -930,6 +959,32 @@ html {
     left: 50%;
     transform: translateX(-50%);
     color: white;
+    padding: 5px 10px;
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.image-title-black {
+    position: relative;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+    padding: 5px 10px;
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.image-title-carousel {
+    position: relative;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
     padding: 5px 10px;
     font-size: 4rem;
     font-weight: bold;
