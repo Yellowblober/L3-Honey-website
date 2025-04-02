@@ -127,3 +127,17 @@ document.addEventListener("DOMContentLoaded", function () {
   // Close button
   closeBtn.addEventListener('click', hideOverlay); // Fade out
 });
+
+ function calculateHoney() {
+	const hives = document.getElementById("hiveCount").value;
+	const averageYield = 25; // Average honey production per hive in kg
+	const totalHoney = hives * averageYield;
+	const output = document.getElementById("honey-output");
+	output.textContent = `Estimated honey production: ${totalHoney} kg per year.`;
+	output.classList.remove("hidden");
+}
+
+function toggleFAQ(num) {
+  var answer = document.getElementById("faq-answer-" + num);
+  answer.classList.toggle("open");
+}

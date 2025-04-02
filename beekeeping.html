@@ -50,7 +50,24 @@
 		</div>
 	</div>
 </div>		
-	
+
+<!-- Tooltip Element -->
+<div class="tooltip" id="tooltip">Read More</div>
+
+<!-- Overlay for Inspect Click -->  <!-- This whole overlay section is all just place holder stuff as once the user clicks an image the information attached to that image gets placed into the sections below using javascript -->
+<div class="overlay" id="inspect-overlay">
+<div class="overlay-content">
+	<button class="close-btn" id="close-overlay">&times;</button>
+  <div class="overlay-image">
+	<img src="images/LandingImage.webp" alt="Inspected image" id="overlay-img">
+  </div>
+  <div class="overlay-text">
+	<h2 id="overlay-title">Title Goes Here</h2>
+	<p id="overlay-desc">Description text goes here.</p>
+  </div>
+</div>
+</div>
+
 <div class="Fade Seg">
 	<div class="grid-container">
 		<div class="row">
@@ -93,8 +110,9 @@
 	</div>		
 </div>		
 </div>		
-	
-	
+
+<div class="grayspacer"></div>
+<div class="whitespacer"></div>	
 	
 <div class="grid-container">
 	<div class="row">
@@ -103,7 +121,7 @@
 			<p>Choosing the right location for your hives are essential for the longevity and quality of your future bees lives. Things to consiter will be making sure the location is not overly exposed but still sunny, sheltered from strong winds, near a good water source, and easily accessible for your own sake. If you think you have a spot in mind that will work then start there. make sure the space you choose has room for expanding because when you start you cannot stop.<br><br> When introducing new bees into your newly setup hive you must make sure you check you have a healthy queen bee. When you do transfer your bees you must be super careful since bees are rather fragile. Once your bees have been put inside the hive you must let them settle in naturaly.</p>
 		</div>
 		<div class="column column-50">
-			
+			<img src="images/bee-hive-setup.jpg" alt="image of multiple bees on beehive frames, with a guy collecting honey.">
 		</div>
 	</div>
 </div>
@@ -112,16 +130,110 @@
 	<div class="row">
 		<div class="column column-50">
 			<h1>So What Can You Expect In The First Year?</h1>
-			<p>In the first year of setting up your new hive there might not be much happening and honey production might only start properly 4-6 months after setting up. In this time however you MUST keep watching and inspecting for possible diseases as there are many nowdays. After those 4-6 months of proper maintenance and care you might be close to getting your first bit of honey. After the first year your new hive should start to pick up production and start producing lots more honey as the bees become fully settled in. If you are curious to see how much honey more than one hive will make per year as an esitmate, take a look at the right section which holds a calculator just for this.</p>
+			<p>In the first year of setting up your new hive there might not be much happening and honey production might only start properly 4-6 months after setting up. In this time however you MUST keep watching and inspecting for possible diseases as there are many nowdays. After those 4-6 months of proper maintenance and care you might be close to getting your first bit of honey. After the first year your new hive should start to pick up production and start producing lots more honey as the bees become fully settled in. If you are curious to see how much honey more than one hive will make per year as an esitmate, take a look below where there is a calculator just for this.</p>
+			<div class="calculator">
+				<label for="hiveCount"><p>Enter the number of hives:</p></label>
+				<input type="number" id="hiveCount" min="1" value="1">
+				<button class="calculator" onclick="calculateHoney()">Calculate</button>
+				<p id="honey-output" class="hidden"></p>
+			</div>
 		</div>
 		<div class="column column-50">
-			
+			<img src="images/honey-comb-bee.jpg" alt="image of multiple bees on beehive frames, with a guy collecting honey.">
 		</div>
 	</div>
 </div>
+
+<div class="whitespacer"></div>
+	
+<div class="darkBg">	
+	<div class="grid-container">
+		<div class="row">
+      		<div class="column column-50">
+					<!-- Carousel -->
+            	<div class="carousel">
+                	<div class="slides">
+                    	<div class="slide">
+							<img src="images/Varroa-mite.webp" alt="close up picture of a Varroa mite" class="inspect-img" data-title="Varroa Mite:" data-desc="Varroa Mites are tiny external parasites that latch onto bees and weaken them by sucking their bodily fluids out. They act much like ticks but are way smaller. Signs of these mites are deformed wings, spotty brood pattern with dead or uncapped larve, and small reddish-brown mites visible on adult bees or larvae. To manage these pesky creatures there are a few options but removing capped drone cells can help as the mites prefer drone brood. Another option is having a screened bottom boards, this helps the bees by making the mites fall out of the hive instead of latching onto the bees. The last option is chemical & natural treatments, oxalic acid, formic acid and thymol treatments can help manage mite populations. Vorroa is the main problem at the moment as it leaves beekeepers with destroyed hives and drives prices for honey up.">
+						</div>
+                    	<div class="slide">
+							<img src="images/Wax-moth.jpg" alt="Picture of a wax moth on a green leaf" class="inspect-img" data-title="Wax Moth:" data-desc="Wax moths lay eggs in weak or abandond hives and lay their larvae. That larvae tunnels through combs, destroying wax and leaving a web-like mess. Some common signs for this are, webbing in combs, hollowed-out honeycomb and black fecal spots on frames. How to keep your hive safe from them: Keep your hive strong and healthy as they only targer weak hives, store extra frames in a freezer when not in use, and regularly inspect and clean unused comb. Although not as leathal as Varroa mites they can still hurt the lives of your bees easily.">
+						</div>
+                    	<div class="slide">
+							<img src="images/Small-hive-beetle.jpg" alt="Picture of small hive beetles infesting a hive" class="inspect-img" data-title="Small Hive Beetle" data-desc="The small hive beetle are small dark coloured beetles that infest hives and lay eggs in the honeycomb. Their larve destroy honey store and cause fermentation, leading 'slime-out'. Common signs of these beetles are slimy, fermented honey that smells bad, clusters of bees hiding in corners of the hive and physicly seeing them in the hive. To control these nasty beetles you can use oil traps, keeping your colony strong as they are more likely to infest weak hives, and place the hive in a sunny area as the beetles prefer shade.">
+						</div>
+                	</div>
+                		<button class="arrow left">&#10094;</button>
+                		<button class="arrow right">&#10095;</button>
+            	</div>
+			</div>
+			<div class="column column-50">
+				<h1>Pests &amp; Diseases:</h1>
+				<p>Much like humans bees and their colonies can get sick and attacked. Some of these diseases and pests you are almost likely to see unless you take measures to prevent some of these nasty colony killers. Some of the common purps are Varroa Mites, Wax Moths, and Small Hive Beetles. inspect the images to the left for more information. Keep an eye out as it might be too late if you dont regularly check on your hives. Dont let these put you off beekeeping as its just something you will have to deal with when taking on this hobby.</p>
+			</div>
+    	</div>
+	</div>
+</div>
+	
+<div class="grayspacer"></div>	
+<div class="whitespacer"></div>
+	
+<div class="grid-container">
+	<div class="row">
+		<div class="column column-50">
+			<h1>Swarming:</h1>
+			<p>Why do bees swarm? Swarming is a natural way for bee colonies to reproduce. When a hive becomes too crowded or lacks enough ventilation, the colony may split, and the queen will leave with half the workers to establish a new home. Signs for bees that may swarm are: Queen cells at the bottom of frames, over crowded hives, bearding bees (bees hanging outside the hive on warm days). There are a few ways to prevent swarming and keeping honey production going strong; like providing extra space, requeen regularly, split hives in spring time if the hive is growing too large. Of course there are many other ways to prevent swarming but these are some of the more common solutions.</p>
+		</div>
+		<div class="column column-50">
+			<img src="images/Bee-swarm.jpg" alt="image of multiple bees swarming">
+		</div>
+	</div>	
+</div>	
+	
+<div class="grid-container">
+	<div class="row">
+		<div class="column column-50">
+			<h1>Weather &amp; Hive Health:</h1>
+			<p>Cold temperatures can be deadly for honeybees, especially if food stores run low. To prepare for colder weather or winter you should insulte the hive while keeping good ventilation, and manually feed the bees with sugar cakes. On the flip side when the weather is warmer that usual or just coming up to summer you should provide shade, increase the ventilation for cooling, and place some shallow water near the hive for cooling down the bees. If you prepare well for colder or warmer than normal weather your bees should be happy and keep them producing honey.</p>
+		</div>
+		<div class="column column-50">
+			<img src="images/Sunny.webp" alt="image of the sun in the blue sky.">
+		</div>
+	</div>	
+</div>	
+
+<div class="grid-container">
+	<div class="row">
+		<div class="column column-75">
+			<h1>Frequently Asked Questions:</h1>
+			<div class="faq-container">
+				<div class="faq-item">
+					<button onclick="toggleFAQ(1)" class="faq-button">How much time does beekeeping take?</button>
+					<div id="faq-answer-1" class="faq-answer">
+						<p>On average, beekeeping requires about 1-2 hours per week for hive maintenance.</p>
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<button onclick="toggleFAQ(2)" class="faq-button">What type of bees should beginners start with?</button>
+					<div id="faq-answer-2" class="faq-answer">
+						<p>Italian honey bees are recommended for beginners due to their gentle nature and strong honey production.</p>
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<button onclick="toggleFAQ(3)" class="faq-button">How do I know if my hive is healthy?</button>
+					<div id="faq-answer-3" class="faq-answer">
+						<p>A healthy hive will have active bees, a balanced brood pattern, and ample honey stores. Regular inspections help detect any issues early.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>	
 	
 <div class="whitespacer"></div>
-
+	
 <div class="darkBg">
 	<div class="grid-container">
 		<div class="row">

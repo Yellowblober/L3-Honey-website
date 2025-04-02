@@ -776,7 +776,7 @@ html {
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
-    font-size: 3rem;
+    font-size: 40px;
     color: white;
     padding: 10px;
     border-radius: none;
@@ -1017,4 +1017,68 @@ html {
 	height: 10vh;
 	width: 100%;
 	postion: relative;
+}
+
+.grayspacer {
+	height: 5vh;
+	width: 100%;
+	postion: relative;
+	background-color: #282828;
+}
+
+input {
+	width: 20%;
+	border: 2px solid #ECA400 ;
+	border-radius: 3px;
+	margin-left: 20px;
+	font-size: 24px;
+}
+
+.calculator button{
+	border: none;
+	background-color: #F4EDED;
+	color: #ECA400;
+	font-size: 19px;
+	margin-left: 20px;
+	transition: .2s ease-out;
+	font-weight: bold;
+}
+
+.calculator:hover {
+	font-size: 20px;
+}
+
+.faq-container {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: left;
+}
+.faq-item {
+  border-bottom: 3px solid #ECA400;
+  padding: 10px 0;
+}
+.faq-button {
+  background-color: transparent;
+  border: 3px #ECA400;
+  width: 100%;
+  text-align: left;
+  padding: 20px;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+  transition: 0.2s ease-out;
+}
+.faq-button:hover {
+  font-size: 25px;
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  padding: 0 10px;
+}
+
+.faq-answer.open {
+  max-height: 150px; /* Adjust this value if you have longer content */
+  padding: 10px;
 }
