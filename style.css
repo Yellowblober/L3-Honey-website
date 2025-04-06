@@ -2,7 +2,7 @@
 /* CSS Document */
 
 body::-webkit-scrollbar {
-	display: none;
+	display: none; /* making sure by default there is no scrollbar */
 }
 
 /* General Styles */
@@ -193,7 +193,7 @@ html {
 	height: 60px
 }
 
-/* Grid Container */
+/* Grid Container, I love this its just is super flexable and works perfectly for my use case */
 .grid-container {
   display: flex;
   flex-direction: column;
@@ -201,7 +201,7 @@ html {
   margin: 20px;
 }
 
-/* Footer */
+/* Footer this is just the actual footer bit the links bit is almost at the bottom*/
 .footer {
     position: relative;
     z-index: 3;
@@ -235,14 +235,14 @@ html {
   margin-top: 40px;
 }
 
-/* Column */
+/* Column, baseline styling */
 .column {
   flex: 1; /* Each column takes equal space */
   padding: 20px;
   text-align: center;
 }
 	
-/* Column Sizes */
+/* Column Sizes these are for different section pieces in the website*/
 .column-33 {
   flex: 1 1 33%;
   vertical-align: top; 
@@ -282,14 +282,14 @@ html {
 	max-height: 1000px;
 	object-fit: cover;
 	width: 800px;
+	vertical-align: top !important;
 }
 
 /* Ensure images resize properly */
 .column img {
-  max-width: 100%; /* Image will never exceed the width of its container */
-  height: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* width of its container */
+  height: auto; /
   display: block; /* Remove extra space below the image */
-  vertical-align: top;
 }
 
 /* ANIMATIONS */
@@ -335,6 +335,52 @@ html {
 
 /* MEDIA QUERIES */
 
+@media (max-width: 460px) {
+	.footer h1 {
+		font-size: 3rem;
+	}
+	
+	.footer p {
+		font-size: 1.5rem;
+	}
+	
+	.column-75{
+		align-content: left;
+		text-align: left; 
+		margin: 10px;
+	}
+	
+	.column-50{
+		margin: 10px;
+		padding: 20px 0px 20px 0px;
+	}
+	
+	.column-100 p, .column-100 h1{
+		margin: 0 15px 0 15px; 
+	}
+	
+	.title-bees-page h1{
+		font-size: 3rem !important;
+		padding-top: 70px; 
+	}
+	
+	.sidebar h1{
+		padding: 80px 60px 0 15px;
+		margin: 10px 0;
+	}
+	
+	.sidebar ul{
+		padding-left: 10px;
+		margin-top: 10px;
+	}
+	
+	.overlay-content{
+		flex-direction: column; 
+		padding: 20px 35px !important;
+	}
+}
+
+
 /* Small screens (mobile) */
 @media (max-width: 768px) {
   .sidebar-text {
@@ -354,12 +400,16 @@ html {
 		margin: 0 auto;
 	}
 	
-	.sidebar  h1 {
+	.sidebar h1 {
 		font-size: 2rem;
 	}
 	
 	.image-title {
 		font-size: 1rem !important;
+	}
+		
+	.column-50 img {
+		margin: 10% 0;
 	}
 }
 
@@ -393,6 +443,10 @@ html {
 	.column-75 {
 		margin-left: 100px;
 		margin-right: 100px;
+	}
+	
+	.column-50 img {
+		margin: 10% 0;
 	}
 }
 
@@ -428,6 +482,10 @@ html {
 	.image-title {
 		font-size: 2rem !important;
 	}
+	
+	.column-50 img {
+		margin: 15% 0;
+	}
 }
 
 /* 24' monitors*/
@@ -447,7 +505,7 @@ html {
   .timeline-container {
     display: flex;
     justify-content: center;
-    overflow-x: hidden; /* Disable scrolling */
+    overflow-x: hidden; /* Disables scrolling */
   }
 
   .timeline {
@@ -468,7 +526,7 @@ html {
   }
 
   .timeline li {
-    margin: 0 60px; /* Ensures even spacing between items */
+    margin: 0 60px; /* even spacing between items */
   }
 
 	.sidebar h1{
@@ -514,8 +572,6 @@ html {
 	}
 }
 
-
-
 .column img:hover {
   transform: scale(1.02);
   transition: transform 0.3s ease-in-out;
@@ -532,7 +588,7 @@ html {
     gap: 10px;
 }
 
-.checklist label {
+.checklist label { /* making the background of the box yellow */
     display: center;
     align-items: flex-start;
     gap: 8px;
@@ -540,7 +596,7 @@ html {
 	accent-color: #ECA400;
 }
 
-.checklist input[type="checkbox"] {
+.checklist input[type="checkbox"] { /* styling the checkboxes */
     cursor: pointer;
 }
 
@@ -561,19 +617,19 @@ html {
 	
 }
 
-.learn-more-link:hover {
+.learn-more-link:hover { /* for the inlarging font size */
     text-decoration: underline;
 	font-size: 19px;
 	transition: 0.2s ease-out;
 }
 
-    /* Timeline Section */
+/* Timeline Section */
 #timeline-section {
     position: relative;
     padding: 20px 0;
 }
     
-    /* Timeline container: full viewport width with horizontal scrolling */
+ /* Timeline container: full viewport width with horizontal scrolling */
  .timeline-container {
  	width: 100%;
     height: 35vh;
@@ -587,15 +643,15 @@ html {
 }
     /* Hide scrollbar */
 .timeline-container::-webkit-scrollbar {
-    display: none;
+    display: none; /* for chrome and edge */
 }
 
-.timeline-container {
-    -ms-overflow-style: none;
+.timeline-container { /* hides the scroll bar for this section */
+    -ms-overflow-style: none; /* for firefox */
     scrollbar-width: none;
 }
     
-    /* Timeline list styling */
+/* Timeline list styling */
 .timeline {
     position: absolute;
     display: inline-block;
@@ -605,7 +661,7 @@ html {
 	width: 1800px;
 }
     
-    /* Yellow line running through the dots */
+/* Yellow line running through the dots */
 .timeline::before {
     content: "";
     position: absolute;
@@ -618,7 +674,7 @@ html {
 	background-color: #ECA400;
 }
     
-    /* Timeline items */
+/* Timeline items */
 .timeline li {
     position: relative;
     display: inline-block;
@@ -629,7 +685,7 @@ html {
 	vertical-align: top;
 }
     
-    /* Top part: Date above the line */
+/* Top part: Date above the line */
 .timeline-top {
     margin-top: 10%;
     color: black;
@@ -639,14 +695,14 @@ html {
 	line-height: 30px;
 }
     
-    /* Bottom part: Details below the line */
+/* Bottom part: Details below the line */
 .timeline-bottom {
     margin-top: 25%; 
     color: #ECA400;
     font-size: 14px;
 }
     
-.timeline-bottom h3 {
+.timeline-bottom h3 { /* font styling for the timeline section */
     font-size: 19px;
 	color: black;
 }
@@ -657,7 +713,7 @@ html {
 	align-items: center;
 }
     
-    /* Dot styling: using a pseudo-element on each li */
+/* Dot styling: using a pseudo-element on each li */
 .timeline li::after {
     content: "";
     position: absolute;
@@ -672,16 +728,14 @@ html {
 	align-content: center;
 }
 
-/* new */
-
 /* Background Image Container */
 .explore-section {
     position: relative;
-    height: 50vh; /* Adjust height as needed (not full screen) */
+    height: 50vh; 
     width: 100%; /* Fits within its container */
     display: flex;
     align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
+    justify-content: center; 
     color: white; /* White text */
     text-align: center;
     overflow: hidden;
@@ -701,7 +755,7 @@ html {
     animation: changeBackground 15s infinite; /* Change background every 15 seconds */
 }
 
-/* Overlay */
+/* Overlay for the explore section so that the text is more visible*/
 .overlay {
     position: absolute;
     top: 0;
@@ -712,7 +766,7 @@ html {
     z-index: 2;
 }
 
-/* Keyframes for Background Change */
+/* Keyframes for Background Change for the explore section */
 @keyframes changeBackground {
     0%, 20% {
         background-image: url('images/bee-on-flower.jpg'); /* First image */
@@ -770,7 +824,7 @@ html {
 	justify-content: center;
 }
 
-/* Arrow Controls */
+/* Arrow Controls for the carosuel */
 .arrow {
     position: absolute;
     top: 50%;
@@ -819,17 +873,22 @@ html {
   color: white;
 }
 
-.footer-nav ul li a, ul li i {
+.footer-nav ul li a {
   color: white;
   text-decoration: none;
 }
 
-.footer-nav ul li a:hover {
+ .footer-nav ul li i { /* this is a duplicate from the sidebar but put into the footer and color of text has change etc. */
+  color: #ECA400;
+  text-decoration: none;
+}
+
+.footer-nav ul li a:hover{
 	color: #ECA400; 
 	text-decoration: underline; 
 }
 
-.title-bees-page h1{
+.title-bees-page h1{ /* changing the title for the bees page */
   position: absolute;
   top: 20px;
   left: 50%;
@@ -844,7 +903,7 @@ html {
   margin-top: 100px; 
 }
 
-.landing-bees-page {
+.landing-bees-page { /* lading page adapted for the bees page */
   position: relative;
   width: 100%;
   height: 20vh;
@@ -877,7 +936,7 @@ html {
   top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(0, 0, 0, 1);
   z-index: 2000;
-  display: flex;             /* Keep it flex so content is centered */
+  display: flex;             
   justify-content: center;
   align-items: center;
   opacity: 0;                /* Start transparent */
@@ -900,11 +959,11 @@ html {
 .overlay.show {
   opacity: 1;
   visibility: visible;
-  pointer-events: all; /* Now clickable */
+  pointer-events: all; 
 }
 
 /* Close (X) button at top right of the content box */
-.close-btn {
+.close-btn { 
   position: absolute;
   top: 10px; 
   right: 10px;
@@ -915,7 +974,7 @@ html {
   color: #ECA400;
 }
 
-/* Example styling for the image on the left */
+/* styling for the image on the left */
 .overlay-image {
   flex: 1;
   margin-right: 20px;
@@ -927,7 +986,7 @@ html {
 }
 
 /* Example styling for text on the right */
-.overlay-text {
+.overlay-text { /* setting the peramitors for the overlay content */
   flex: 1;
   text-align: left;
   color: #000;
@@ -953,7 +1012,7 @@ html {
 	vertical-align: top;
 }
 
-.image-title {
+.image-title { /* getting the titles for each image to stick to the image */
     position: absolute;
     top: 15px;
     left: 50%;
@@ -992,7 +1051,7 @@ html {
     white-space: nowrap;
 }
 
-.subtitle-bees-page h1{
+.subtitle-bees-page h1{ /* changing the subtitles for the bees page */
   position: absolute;
   top: 20px;
   left: 50%;
@@ -1007,13 +1066,13 @@ html {
   margin-top: 100px; 
 }
 
-.sub-bees-page {
+.sub-bees-page { 
   position: relative;
   width: 100%;
   height: 20vh;
 }
 
-.whitespacer {
+.whitespacer { /* adds negative space into the website and so does the grey one, i know the class is spelt wrong*/
 	height: 10vh;
 	width: 100%;
 	postion: relative;
@@ -1026,7 +1085,7 @@ html {
 	background-color: #282828;
 }
 
-input {
+input { /* for the calculator so the user can input a number */
 	width: 20%;
 	border: 2px solid #ECA400 ;
 	border-radius: 3px;
@@ -1034,7 +1093,7 @@ input {
 	font-size: 24px;
 }
 
-.calculator button{
+.calculator button{ /* styling the button specificly for the calculator section */
 	border: none;
 	background-color: #F4EDED;
 	color: #ECA400;
@@ -1078,7 +1137,7 @@ input {
   padding: 0 10px;
 }
 
-.faq-answer.open {
-  max-height: 150px; /* Adjust this value if you have longer content */
+.faq-answer.open { 
+  max-height: 150px; 
   padding: 10px;
 }

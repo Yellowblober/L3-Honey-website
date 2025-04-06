@@ -1,5 +1,5 @@
 let rotation = 0; // Initialize rotation angle
-
+// This here is for the sidebar button toggle //
 function toggleSidebar() {
   const sidebar = document.querySelector('.sidebar');
   const button = document.querySelector('.menu-toggle');
@@ -43,6 +43,7 @@ function rotateImage() {
   img.style.transform = `rotate(${rotation}deg)`; // Apply rotation
 }
 
+// This is for the checkboxes on the index page, this just hides and reveales some text //
 document.addEventListener('DOMContentLoaded', function () {
 	const checkboxes = document.querySelectorAll('.check-item');
 	const learnMoreLink = document.querySelector('.learn-more-link'); 
@@ -59,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 });
 
+// This here is the code for the carosuel, this just flicks through the images//
 document.addEventListener('DOMContentLoaded', function () {
 const slides = document.querySelector('.slides');
 const prevButton = document.querySelector('.arrow.left');
@@ -67,19 +69,21 @@ let currentIndex = 0;
 
 function showSlide(index) {
 	const slideWidth = slides.children[0].clientWidth;
-	slides.style.transform = `translateX(-${slideWidth * index}px)`;
+	slides.style.transform = `translateX(-${slideWidth * index}px)`; // moving the images based on the width//
 }
 
 prevButton.addEventListener('click', function () {
 	currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.children.length - 1;
-	showSlide(currentIndex);
+	showSlide(currentIndex); // to go back, if its at the start it goes to the final image
 });
 
 nextButton.addEventListener('click', function () {
 	currentIndex = (currentIndex < slides.children.length - 1) ? currentIndex + 1 : 0;
-	showSlide(currentIndex);
+	showSlide(currentIndex); // to go to the next one if its at the end this will take you to the first image.
 });
 });
+
+// This here is the overlay image inspect feature, this is what brings up the content when an image is clicked// 
 
 // Show overlay
 function showOverlay() {
@@ -103,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const overlayDesc = document.getElementById('overlay-desc');
   const closeBtn = document.getElementById('close-overlay');
   
-  // Tooltip logic (unchanged)
+  // Tooltip logic, this just moves the text around in the same place relative to the cursor
   images.forEach(img => {
     img.addEventListener('mousemove', (e) => {
       tooltip.style.top = (e.pageY + 15) + 'px';
@@ -120,13 +124,15 @@ document.addEventListener("DOMContentLoaded", function () {
       overlayTitle.textContent = img.getAttribute('data-title') || 'Inspecting Image';
       overlayDesc.textContent = img.getAttribute('data-desc') || 'Detailed information...';
       
-      showOverlay(); // Fade in
+      showOverlay(); // Fade in the content
     });
   });
 
   // Close button
-  closeBtn.addEventListener('click', hideOverlay); // Fade out
+  closeBtn.addEventListener('click', hideOverlay); // Fade out the content
 });
+
+// This here is the honey volume calculator, this calculates the amount of honey per year depending on the amount of hives.
 
  function calculateHoney() {
 	const hives = document.getElementById("hiveCount").value;
@@ -137,7 +143,8 @@ document.addEventListener("DOMContentLoaded", function () {
 	output.classList.remove("hidden");
 }
 
-function toggleFAQ(num) {
+// This here is the toggle function for the FAQ section on the beekeeping page.
+function toggleFAQ(num) { 
   var answer = document.getElementById("faq-answer-" + num);
   answer.classList.toggle("open");
 }
